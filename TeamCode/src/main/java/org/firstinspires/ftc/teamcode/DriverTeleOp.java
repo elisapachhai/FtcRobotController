@@ -7,9 +7,9 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 import com.qualcomm.robotcore.hardware.Servo;
 
-@TeleOp(name="Mecanum drive", group="Linear OpMode")
+@TeleOp(name="DriverTeleOp", group="Linear OpMode")
 
-public class MecanumTeleOp extends LinearOpMode {
+public class DriverTeleOp extends LinearOpMode {
 
     // Declare OpMode members for each of the 4 motors.
     private ElapsedTime runtime = new ElapsedTime();
@@ -125,7 +125,7 @@ public class MecanumTeleOp extends LinearOpMode {
             }
 
             // Cover flipper control
-            if (gamepad1.a) {  // press A to flip
+            if (gamepad2.a) {  // press A to flip
                 if (!buttonPressed) {  // only trigger once per press
                     buttonPressed = true;
 
