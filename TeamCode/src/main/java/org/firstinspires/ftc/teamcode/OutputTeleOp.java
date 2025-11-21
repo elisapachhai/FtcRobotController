@@ -1,34 +1,36 @@
 package org.firstinspires.ftc.teamcode;
 
+import androidx.annotation.NonNull;
+
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-public class IntakeTeleOp {
-    private DcMotor intakeMotor;
+public class OutputTeleOp {
+    private final DcMotor outtakeMotor;
     //declares a variable to represent intake motor
-    public IntakeTeleOp(HardwareMap hardwareMap) {
+    public OutputTeleOp(@NonNull HardwareMap hardwareMap) {
 
         //constructor (named the same as my class)
-        intakeMotor = hardwareMap.get(DcMotor.class, "intake");
+        outtakeMotor = hardwareMap.get(DcMotor.class, "outtake");
         //connects the code to the motor in Control Hub
-        intakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+        outtakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //makes the motor stop
-        intakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
+        outtakeMotor.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         //controls motor speed directly without encoder
-        intakeMotor.setDirection(DcMotor.Direction.FORWARD);
+        outtakeMotor.setDirection(DcMotor.Direction.FORWARD);
         //sets the rotation direction (can switch direction to REVERSE if the motor spins the wrong way).
     }
 
     public void in() {
-        intakeMotor.setPower(1.0);
-        //spins the motor forwards (intake in)
+        outtakeMotor.setPower(1.0);
+        //spins the motor forwards  (out)
 
     }
     public void out() {
-        intakeMotor.setPower(-1.0);
-        //spins the motor backwards(outtake)
+        outtakeMotor.setPower(-1.0);
+        //spins the motor backwards(in)
     }
     public void stop() {
-        intakeMotor.setPower(0.0);
+        outtakeMotor.setPower(0.0);
         //stops the motor completely
 
     }

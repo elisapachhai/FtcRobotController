@@ -18,8 +18,8 @@ public class DriverTeleOp extends LinearOpMode {
     private DcMotor BLW = null;
     private DcMotor BRW = null;
 
-    private IntakeTeleOp intake;
-    private OuttakeTeleOp outtake;
+    private IntakexasxTeleOp intake;
+    private OutputTeleOp outtake;
 
     private Servo leftCoverServo;
     private Servo rightCoverServo;
@@ -50,8 +50,8 @@ public class DriverTeleOp extends LinearOpMode {
         BLW.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         BRW.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        intake = new IntakeTeleOp(hardwareMap);
-        outtake = new OuttakeTeleOp(hardwareMap);
+        intake = new IntakexasxTeleOp(hardwareMap);
+        outtake = new OutputTeleOp(hardwareMap);
 
         //in configuration it is called coverLeft, and coverRight
         leftCoverServo = hardwareMap.get(Servo.class, "coverLeft");
